@@ -77,10 +77,19 @@ def repeat(string, count):
 #task 7
 def student_scores(a, **kwargs):
     if a == 'best':
-        return max(kwargs, key=kwargs.get)           
+        high_score = 0
+        student_name = ''
+        for key, value in kwargs.items():
+            if value > high_score:
+                high_score = value
+                student_name = key
+        return student_name      
     elif a == 'mean':
-        mean = sum(kwargs.values())/len(kwargs)
-        return mean
+        mean = 0
+        for key, value in kwargs.items():
+            mean += value
+
+        return mean/len(kwargs)
 
 #task 8
 def titleize(s):
@@ -137,6 +146,3 @@ def pig_latin_word(word):
                 vowel_index = word.index(letter)
                 break
         return f'{word[vowel_index:]}{"".join(pre)}ay'
-    
-
-print(pig_latin('square'))
