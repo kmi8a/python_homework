@@ -5,8 +5,13 @@ special_line = 'done for now'
 
 with open('diary.txt', 'a')as file:
     try:
+        prompt = 1
         while diary_input != special_line:
-            diary_input = input('What happened today? ')
+            if prompt == 1:
+                diary_input = input('What happened today? ')
+            elif prompt == 0:
+                diary_input = input('What else? ')
+            prompt = 0
             file.write(f'{diary_input}\n')
     except Exception as e:
         trace_back = traceback.extract_tb(e.__traceback__)
