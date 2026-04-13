@@ -75,7 +75,7 @@ sort_by_last_name()
 # print(employees['rows'])
 
 
-# # Task 8
+# Task 8 (first approach)
 # def employee_dict(row):
 #     employee_info = {
 #         f"{employees['fields'][1]}": f"{row[1]}",
@@ -87,7 +87,7 @@ sort_by_last_name()
 
 # print(employee_dict(employees["rows"][8]))
 
-# Task 8
+# Task 8 (version using zip())
 def employee_dict(row):
     employee_info = dict(zip(employees['fields'][1:], row[1:]))
     return employee_info
@@ -187,8 +187,8 @@ def write_sorted_list():
     with open('./minutes.csv', 'w', newline="")as file:
         writer = csv.writer(file)
         writer.writerow(minutes1['fields'])
-        writer.writerows(sorted_by_dt)
-        # writer.writerows(minutes_list)
+        writer.writerows(sorted_by_dt) #(i think this is what the task requires)
+        # writer.writerows(minutes_list) (but the way it is written it can be this line, the text is confussing)
         
     return sorted_by_dt
 
