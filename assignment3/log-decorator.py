@@ -20,13 +20,14 @@ def logger_decorator(func):
 
 @logger_decorator
 def hello():
-    return f'Hello World'
+    print(f'Hello World')
+    return
 
 @logger_decorator
 def foo1(*args):
     return True
 @logger_decorator
-def foo2(*kwargs):
+def foo2(**kwargs):
     return logger_decorator
 
 hello()

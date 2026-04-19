@@ -1,7 +1,7 @@
 function: hello
 positional parameters: none
 keyword parameters: none
-return: Hello World
+return: None
 
 function: foo1
 positional parameters: (5, 'red', True)
@@ -11,5 +11,5 @@ return: True
 function: foo2
 positional parameters: none
 keyword parameters: {'rust': True, 'python': True, 'java': False}
-return: <function logger_decorator at 0x00000164A24AFAC0>
+return: <function logger_decorator at 0x000002737BCDFAC0>
 
