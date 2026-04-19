@@ -1,8 +1,7 @@
 def make_hangman(secret_word):
     guesses = []
     def hangman_closure(letter):
-        if letter in secret_word:
-            guesses.append(letter)
+        guesses.append(letter)
         guessed = [l if l in guesses else '_' for l in secret_word ]
         guessed_display = ''.join(guessed)
         print(guessed_display)

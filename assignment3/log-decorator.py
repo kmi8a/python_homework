@@ -2,7 +2,7 @@ import logging
 
 def logger_decorator(func):
     def wrapper(*args, **kwargs):
-        result = func()
+        result = func(*args, **kwargs)
         if not args:
             args = 'none'
         if not kwargs:
