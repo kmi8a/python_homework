@@ -1,3 +1,5 @@
+## Task 3
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
@@ -50,6 +52,8 @@ driver.quit()
 
 results_df = pd.DataFrame(results)
 print(results_df)
+
+## Task 4
 
 results_df.to_csv('get_books.csv', index=False)
 results_df.to_json('get_books.json', orient='records', indent=4)
