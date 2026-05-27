@@ -2,4 +2,3 @@ i learned how to use selenium driver before, so this was a not so difficult task
 
 one of the challenges i faced was that i didn't remembered all the methods available, 
 so i had to review some projects that i did before to give me a refresher on the topic.
-
