@@ -1,0 +1,10 @@
+## Task 1
+
+User-agent: * Disallow: /staff/
+
+this is the only section disallowed for general public and search engines.
+
+our script will use the '/v2/search' endpoint, which is open to the public.
+
+i'm using sleep(2) to pause the browser process immediately upon loading the page,
+this prevents aggressive requests in order to not strain the library's servers.
