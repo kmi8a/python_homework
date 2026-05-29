@@ -4,7 +4,6 @@ import sqlite3
 
 def populate_publishers(connection, publisher_name):
     cursor = connection.execute("SELECT id FROM publishers WHERE name = ?", (publisher_name,))
-
     results = cursor.fetchone()
 
     if results:
@@ -164,11 +163,6 @@ try:
         magazines_by_publisher = cursor.fetchall()
 
         print(magazines_by_publisher)
-
-
-
-
-
 
 
 except sqlite3.Error as e:
