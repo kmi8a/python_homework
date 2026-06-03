@@ -1,0 +1,29 @@
+CREATE TABLE publishers (
+    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    name TEXT NOT NULL UNIQUE
+);
+
+CREATE TABLE magazines (
+    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    name TEXT NOT NULL UNIQUE,
+    publisher_id INTEGER,
+    FOREIGN KEY(publisher_id) REFERENCES publishers(id)
+);
+
+CREATE TABLE subscribers (
+    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    publisher_id INTEGER,
+    name TEXT NOT NULL,
+    address TEXT NOT NULL,
+    FOREIGN KEY(publisher_id) REFERENCES publishers(id)
+);
+
+CREATE TABLE subscriptions (
+    subscriber_id INTEGER,
+    magazine_id INTEGER,
+    exercise_id INTEGER,
+    expiration_date TEXT NOT NULL,
+    FOREIGN KEY(subscriber_id) REFERENCES subscribers(id)
+    FOREIGN KEY(magazine_id) REFERENCES magazines(id)
+);
+
