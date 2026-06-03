@@ -114,8 +114,8 @@ try:
                         subscriber_id INTEGER,
                         magazine_id INTEGER,
                         expiration_date TEXT NOT NULL,
-                        FOREIGN KEY(subscriber_id) REFERENCES subscribers(id)
-                        FOREIGN KEY(magazine_id) REFERENCES magazines(id)
+                        FOREIGN KEY(subscriber_id) REFERENCES subscribers(id),
+                        FOREIGN KEY(magazine_id) REFERENCES magazines(id),
                         UNIQUE (subscriber_id, magazine_id)
                     )
                     """)
