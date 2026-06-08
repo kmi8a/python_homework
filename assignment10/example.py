@@ -108,6 +108,7 @@ WHERE salary = (
 cursor.execute(query)
 print(cursor.fetchall())
 
+
 creation = """
 CREATE TABLE Projects (
     id INTEGER PRIMARY KEY,
