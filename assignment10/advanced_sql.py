@@ -1,5 +1,4 @@
 import sqlite3
-import os
 
 ## Task 1: Complex JOINs with Aggregation
 
