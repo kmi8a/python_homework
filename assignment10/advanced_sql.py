@@ -16,6 +16,7 @@ try:
     JOIN line_items ON orders.order_id = line_items.order_id
     JOIN products ON line_items.product_id = products.product_id
     GROUP BY orders.order_id
+    ORDER BY orders.order_id ASC
     LIMIT 5
     ;
     """
@@ -91,7 +92,7 @@ try:
     current_order_id = cursor.fetchone()[0]
 
     for product in products_ids:
-        cursor.execute("INSERT INTO line_items (order_id, product_id, quantity) VALUES (?, ?, ?);", (current_order_id, product, 5))
+        cursor.execute("INSERT INTO line_items (order_id, product_id, quantity) VALUES (?, ?, ?);", (current_order_id, product, 10))
 
     conn.commit()
 
@@ -119,7 +120,7 @@ except Exception as e:
 
 try:
     order_qty_query = """
-        SELECT employees.first_name, employees.last_name, COUNT(orders.order_id) AS order_qty 
+        SELECT employees.employee_id, employees.first_name, employees.last_name, COUNT(orders.order_id) AS order_qty 
         FROM employees 
         JOIN orders ON employees.employee_id = orders.employee_id 
         GROUP BY employees.employee_id 
@@ -130,7 +131,7 @@ try:
     order_qty = cursor.fetchall()
 
     for employee in order_qty:
-        print(f"{employee[0]} {employee[1]}, {employee[2]} orders processed")
+        print(f"ID: {employee[0]}, {employee[1]} {employee[2]}, {employee[3]} orders processed")
 
 except Exception as e:
     print("Error:", e)
